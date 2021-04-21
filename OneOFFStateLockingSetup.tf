@@ -5,7 +5,7 @@
 # Create the bucket, set encryption and versioning
 #
 resource "aws_s3_bucket" "terraform_state" {
-  bucket = join("",[var.cohort_id,"state-files"])
+  bucket = join("",[var.account_id,"state-files"])
   versioning {
     enabled = true
   }
@@ -21,7 +21,7 @@ resource "aws_s3_bucket" "terraform_state" {
 # Create the Dynamodb table for locking
 #
 resource "aws_dynamodb_table" "terraform_locks" {
-  name         = "PSA_State_Locks"
+  name         = "State_Locks"
   billing_mode = "PAY_PER_REQUEST"
   hash_key     = "LockID"
   attribute {

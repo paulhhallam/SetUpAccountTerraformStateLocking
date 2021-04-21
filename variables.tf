@@ -13,6 +13,6 @@ variable "region_prod" {
 # AWS Account / Cohort details
 variable "cohort_id" {
   type    = string
-  default = "psa-academy-"
+  default = "accounts-"
 }
 
